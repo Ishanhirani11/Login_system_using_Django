@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1 class="username" onclick="toggleMenu()">
+    Welcome, {{ request.user.username|upper }}
+</h1>
+<div id="menu" class="dropdown">
+    <a href="{% url 'profile' %}">Profile</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</div>
+
+<div class="header">
+    
+    <div>    
+        <h2>Dashboard</h2>
+    </div>
+    
+    <a href="{% url 'create' %}" class="button">Create Task</a>
+</div>
+
+<div class="task-section">
+    <h3>Pending Tasks</h3>
+    <ul>
+    {% for task in pending_tasks %}
+        <li>
+            <span class="task-title">{{ task.title }}</span>
+            <div class="task-buttons">
+                <a href="{% url 'view' task.id %}" class="btn">View</a>
+                <a href="{% url 'toggle' task.id %}" class="btn">Complete</a>
+                <a href="{% url 'update' task.id %}" class="btn">Edit</a>
+                <a href="{% url 'delete' task.id %}" class="btn">Delete</a>
+            </div>
+        </li>
+    {% empty %}
+        <li>No pending tasks</li>
+    {% endfor %}
+    </ul>
+</div>
+
+<div class="task-section">
+    <h3>Completed Tasks</h3>
+    <ul>
+    {% for task in completed_tasks %}
+        <li>
+            <span class="task-title">{{ task.title }}</span>
+            <div class="task-buttons">
+                <a href="{% url 'view' task.id %}" class="btn">View</a>
+                <a href="{% url 'toggle' task.id %}" class="btn">Pending</a>
+                <a href="{% url 'update' task.id %}" class="btn">Edit</a>
+                <a href="{% url 'delete' task.id %}" class="btn">Delete</a>
+            </div>
+        </li>
+    {% empty %}
+        <li>No completed tasks</li>
+    {% endfor %}
+    </ul>
+</div>
+
+<script>
+function toggleMenu() {
+    var menu = document.getElementById("menu");
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+document.addEventListener("click", function(event) {
+    var menu = document.getElementById("menu");
+    var header = document.querySelector(".username");
+
+    if (!header.contains(event.target) && !menu.contains(event.target)) {
+        menu.style.display = "none";
+    }
+});
+</script>
+
+{% endblock %}

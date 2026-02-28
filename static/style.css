@@ -1,0 +1,213 @@
+/* ===== GLOBAL PAGE ===== */
+
+body {
+    font-family: Arial, sans-serif;
+    color: rgb(57, 20, 89);
+    background: linear-gradient(to right, #bcc4d2, #a5b4c6);
+    margin: 0;
+    padding: 0;
+}
+
+/* Center everything vertically + horizontally */
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    padding: 60px 20px;
+}
+
+/* Main container */
+.container {
+    width: fit-content;
+    min-width: 500px;
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+
+
+/* ===== HEADER ===== */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.username {
+    cursor: pointer;
+    color: #243b55;
+    font-weight: bold;
+}
+
+
+
+/* ===== DROPDOWN ===== */
+
+.dropdown {
+    display: none;
+    background: #f0f2f5;
+    padding: 10px;
+    border-radius: 6px;
+    width: 130px;
+    margin-top: 5px;
+    position: absolute;
+}
+
+.dropdown a {
+    display: block;
+    text-decoration: none;
+    color: #243b55;
+    padding: 6px 0;
+}
+
+.dropdown a:hover {
+    font-weight: bold;
+}
+
+
+
+/* ===== BUTTONS ===== */
+
+.button,
+.btn {
+    background: #6c7ae0;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.button:hover,
+.btn:hover {
+    background: #5a67d8;
+}
+
+
+
+/* ===== TASK SECTIONS ===== */
+
+.task-section {
+    margin-top: 25px;
+}
+
+.task-section h3 {
+    color: #243b55;
+}
+
+
+
+/* Task list */
+.task-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Task row */
+.task-section li {
+    background: #f7f9fc;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+}
+
+/* Task title (cut long text with ...) */
+.task-title {
+    flex: 1;
+    margin-right: 15px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Buttons on right side */
+.task-buttons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+
+
+/* ===== FORM STYLING ===== */
+
+form {
+    width: 100%;
+}
+
+/* Labels */
+form label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Inputs + textarea */
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Textarea behavior */
+form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Checkbox */
+form input[type="checkbox"] {
+    margin-left: 5px;
+}
+
+
+
+/* ===== HEADINGS ===== */
+
+h2 {
+    margin-top: 0;
+    color: #243b55;
+}
+
+
+
+/* ===== LINKS ===== */
+
+a {
+    color: #6c7ae0;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.helptext {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    opacity: 0.8;
+}

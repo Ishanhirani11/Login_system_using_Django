@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Task Details</h2>
+
+<p><strong>Title:</strong> {{ task.title }}</p>
+<p><strong>Description:</strong> {{ task.description }}</p>
+<p><strong>Status:</strong>
+    {% if task.completed %}
+        Completed
+    {% else %}
+        Pending
+    {% endif %}
+</p>
+
+<br>
+<a href="{% url 'dashboard' %}" class="btn">Back</a>
+
+{% endblock %}
