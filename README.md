@@ -45,20 +45,18 @@ A secure, full-featured Django web application that implements user authenticati
 ## 🏗 Project Structure
 
 ```
-loginsystem/
+Login-system-using-Django/
 │
 ├── login/                 # Main Django app
 │   ├── migrations/
 │   ├── templates/login/
-│   ├── static/
-│   │   └── style.css
 │   ├── models.py
 │   ├── views.py
 │   ├── urls.py
 │   └── forms.py
 │
-├── templates/
-│   └── base.html          # Global layout template
+├── static/
+│   └── style.css          
 │
 ├── loginsystem/
 │   ├── settings.py
@@ -75,7 +73,7 @@ loginsystem/
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/g00562/Login-System.git
+git clone https://github.com/Ishanhirani11/Login_system_using_Django.git
 cd loginsystem
 ```
 
